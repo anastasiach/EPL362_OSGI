@@ -4,24 +4,25 @@ import java.sql.ResultSet;
 
 public interface receptionistFunctions {
 	
-	ResultSet getPatients();
+	ResultSet getClients();
 	
 	boolean checkAvaliability(String date, int time, int d_id);
 	
-	ResultSet getStaff(String clinic);
+	ResultSet getStaff(String branchid);
 	
-	ResultSet getInfoForPatient(int id);
+	ResultSet getInfoForClient(int id);
 	
 	String getCliniName(int id);
 	
-	boolean creareNewRandevou(int pid, String date, int time, String clinic, int did);
+	boolean creareNewRandevou(int cid, String date, int time, String branch, int sid, int drop, int cancel, int update, int append);
 	
 	String[] getLastConditionAndMedicationOfPatient(int patient_id);
 	
 	ResultSet getRandevous ();
 	
-	String getDoctorName(int did);
+	String getLawyerName(int did);
 	
 	 boolean attendRandevou(int rid);
 	
 }
+
