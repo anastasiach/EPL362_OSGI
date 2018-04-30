@@ -38,6 +38,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
+/**
+ * This class is to show the Client list
+ * @author  Anastasia, Anastasia, Antonia, Marina
+ *
+ */
 public class Client_list extends JFrame {
 
 	private JPanel contentPane;
@@ -64,6 +69,7 @@ public class Client_list extends JFrame {
 	 * Create the frame.
 	 */
 	public Client_list(int ID, int choise) {
+		System.out.println(ID);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 539, 457);
 		contentPane = new JPanel();
@@ -124,7 +130,7 @@ public class Client_list extends JFrame {
 		textField.setBounds(179, 295, 117, 20);
 		panel_1.add(textField);
 		
-		JButton button = new JButton("Go Go Coco");
+		JButton button = new JButton("Go");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0){
 				String s=textField.getText();
@@ -132,7 +138,7 @@ public class Client_list extends JFrame {
 					if (s.matches("[0-9]+")) {
 						final int no = Integer.parseInt(textField.getText()); 
 						if(l.contains(no)){
-							Clients_show_GUI frame = new Clients_show_GUI(ID, no);
+							Clients_show_GUI frame = new Clients_show_GUI( ID ,no);
 							frame.setVisible(true);
 							setVisible(false);
 						}
@@ -152,8 +158,8 @@ public class Client_list extends JFrame {
 				else{
 					final int no = Integer.parseInt(textField.getText()); 
 					receptionistFunctions factory = receptionistFactory.getFactory();	
-					String [] condMed = factory.getLastConditionAndMedicationOfPatient(no);
-					if (condMed != null){
+					String [][] condMed = factory.getClientRecord(no);
+					/*if (condMed != null){
 						lastTretment frame = new lastTretment(ID, no, condMed[0], condMed[1]);
 						frame.setVisible(true);
 						setVisible(false);
@@ -161,7 +167,7 @@ public class Client_list extends JFrame {
 						JOptionPane.showMessageDialog(null,"No result",
 							    "No previous Prescriptions",
 							    JOptionPane.ERROR_MESSAGE);
-					}
+					} */
 				}
 				
 				
