@@ -19,6 +19,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+
+/**
+ * This is the GUI that helps the receptionist to show a new randevou
+ * @author  Anastasia, Anastasia, Antonia, Marina
+ *
+ */
 public class Receptionist_GUI extends JFrame {
 
 	private JPanel contentPane;
@@ -68,13 +74,13 @@ public class Receptionist_GUI extends JFrame {
 		btnCtreatRandevou.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				receptionistFunctions factory = receptionistFactory.getFactory();	
-				String lb = factory.getCliniName(ID);
+				String lb = factory.getBranchName(ID);
 				newRandevou frame =new newRandevou(lb,ID);
 				frame.setVisible(true);
 				setVisible(false);
 			}
 		});
-		btnCtreatRandevou.setBounds(104, 43, 181, 28);
+		btnCtreatRandevou.setBounds(104, 30, 181, 28);
 		panel_1.add(btnCtreatRandevou);
 		
 		JButton btnListOfClients = new JButton("List of Clients");
@@ -88,7 +94,7 @@ public class Receptionist_GUI extends JFrame {
 				
 			}
 		});
-		btnListOfClients.setBounds(104, 102, 181, 28);
+		btnListOfClients.setBounds(104, 80, 181, 28);
 		panel_1.add(btnListOfClients);
 		
 		JButton btnListOfRandevous = new JButton("List Of Randevous");
@@ -99,19 +105,34 @@ public class Receptionist_GUI extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnListOfRandevous.setBounds(104, 161, 181, 28);
+		btnListOfRandevous.setBounds(104, 130, 181, 28);
 		panel_1.add(btnListOfRandevous);
 		
-		JButton btnNewButton = new JButton("Find Last Case Strategy");
+		JButton btnNewButton = new JButton("View Client's Record");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Client_list frame = new Client_list(ID, 1);
+				Client_list frame = new Client_list(/*ID*/0, 0);
 				frame.setVisible(true);
 				setVisible(false);
 				
 			}
 		});
-		btnNewButton.setBounds(104, 221, 181, 28);
+		
+		
+		btnNewButton.setBounds(104, 180, 181, 28);
 		panel_1.add(btnNewButton);
+		
+
+		JButton btnRL = new JButton("View Reccomendations");
+		btnRL.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Client_list frame = new Client_list(1, 0);
+				frame.setVisible(true);
+				setVisible(false);
+				
+			}
+		});
+		btnRL.setBounds(104, 230, 181, 28);
+		panel_1.add(btnRL);
 	}
 }
