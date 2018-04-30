@@ -31,6 +31,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+
+/**
+ * This class is for the list of all the randevous
+ * 
+ * @author  Anastasia, Anastasia, Antonia, Marina
+ *
+ */
 public class randevouList extends JFrame {
 
 	private JPanel contentPane;
@@ -135,7 +142,7 @@ public class randevouList extends JFrame {
 		panel_1.add(textField);
 		textField.setColumns(10);
 		
-		JButton btnGoGoCoco = new JButton("Go Go Coco");
+		JButton btnGoGoCoco = new JButton("Go");
 		btnGoGoCoco.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String s=textField.getText();
