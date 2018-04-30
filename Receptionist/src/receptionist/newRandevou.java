@@ -28,6 +28,11 @@ import java.awt.event.ActionEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * This class is to create a new appointment 
+ * @author  Anastasia, Anastasia, Antonia, Marina
+ *
+ */
 public class newRandevou extends JFrame {
 
 	private JPanel contentPane;
@@ -236,6 +241,19 @@ public class newRandevou extends JFrame {
 		});
 		btnCreatRandevou.setBounds(148, 250, 177, 23);
 		panel_1.add(btnCreatRandevou);
+		
+		JButton btnNewButton = new JButton("Back");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Receptionist_GUI frame = new Receptionist_GUI(rec_id);
+				frame.setVisible(true);
+				setVisible(false);
+				
+			}
+		});
+		btnNewButton.setBounds(148, 300, 101, 23);
+		panel_1.add(btnNewButton);
 		
 		
 	}
